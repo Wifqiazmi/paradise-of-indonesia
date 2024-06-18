@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0dcaf0">
+  <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
+  <title>Paradise Of Indonesia</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+  
+<body>
+
+  <!-- preloader -->
+  <div class="preloader">
+    <div class="loading">
+      <img src="./assets/img/preloader.gif" width="80">
+    </div>
+  </div>
+
+  <!-- navbar -->
+  <nav class="navbar p-3 mb-5 bg-transparent navbar-dark navbar-expand-lg navbar-expand-md fixed-top rounded-bottom fw-bold">
+    <div class="container">
+      <a class="navbar-brand" href="./">
+        <img src="./assets/img/logo-light.png" alt="logo" width="40" height="30" class="d-inline-block align-text-top">
+        <span class="fw-bold fs-6">Paradise Of Indonesia</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list-nested" style="font-size: 20px; color: cornflowerblue;"></i>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav ms-auto ">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item mx-2 dropdown">
+            <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button"
+              aria-expanded="false">Provinsi</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="./jateng/">Jawa Tengah</a></li>
+              <li><a class="dropdown-item" href="./bali/">Bali</a></li>
+              <li><a class="dropdown-item" href="./ntt/">NTT</a></li>
+              <li><a class="dropdown-item" href="./sulawesi/">Sulawesi</a></li>
+              <li><a class="dropdown-item" href="./kalimantan/">Kalimantan Selatan</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link active" href="#tentangkami">About Us</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link active" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item ms-2">
+            <a class="nav-link active waves-effect waves-light" id="theme-changer">
+              <span><img src="./assets/img/night-mode.png" class="img-darkmode" alt="ligth mode"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- end navbar -->
+
+  <!-- progres bar -->
+  <div class="progress-container fixed-top">
+    <span class="progress-bar"></span>
+  </div>
+
+  <!-- home -->
+  <div class="bg-img"></div>
+  <div class="container vh-100" id="home">
+    <div class="row align-items-center justify-content-center">
+      <div class="position-absolute start-50 translate-middle text-center text-white" style="top: 87%;">
+        <h3 id="title-home" class="fw-bold" data-aos="fade-up" data-aos-delay="400">Paradise Of Indonesia</h3>
+        <p class="text-white-50 fw-semibold content-home" id="deskripsi-home" >Budaya selalu bercerita sangat baik untuk menyampaikan nilai-nilai luhur pada generasi berikutnya</p>
+        <a href="#provinsi" id="cta" class="btn btn-primary rounded p-2 bg-gradient fw-semibold" >Jelajah sekarang!</a>
+      </div>
+      <canvas class="position-absolute translate-middle" data-aos="zoom-out" data-aos-delay="600" style="overflow-y: hidden; overflow-x:hidden;"></canvas>
+    </div>
+  </div>
+  <!-- end home -->
+
+  <!-- this button will visivle if documen scolled down -->
+  <button onclick="topFunction()" id="go-top" title="Go to top" class="bg-info shadow text-white rounded">
+    <i class="bi bi-arrow-up-circle"></i>
+  </button>
+
+
+  <!-- provinsi -->
+  <div class="container-fluid vh-100 pt-5" id="provinsi">
+    <h2 class="text-center text-white fw-bold pt-5" id="provinsis" data-aos="fade-up">Provinsi</h2>
+    <p class="text-center fw-normal text-white mb-5 " data-aos="fade-up">Berikut beberapa daftar provinsi yang menjadi konten unggulan</p>
+    <div class="container">
+      <div class="row text-white align-items-center">
+        <div class="col col-lg-6 col-12 mb-2 " data-aos="fade-up" data-aos-delay="200"> 
+          <div id="myCarousel" class="carousel slide" data-interval="false">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="d-flex justify-content-between">
+                  <p class="fw-semibold" id="carousel-tittle">JAWA TENGAH</p>
+                  <p class="ic-heart">❤️</p>
+                </div>
+                <div class="card">
+                  <img src="./assets/img/joglo.jpg" class="img-thumbnail" style="object-fit: cover;" alt="...">
+                  <div class="d-none">
+                    <h1 class="display-1">JAWA TENGAH</h1>
+                    <p class="display-3">
+                      Jawa Tengah adalah sebuah provinsi Indonesia yang terletak di bagian tengah Pulau Jawa. Ibu kotanya adalah Semarang...
+                    </p>
+                    <a href="./jateng/" class="btn btn-primary">LIHAT SEKARANG!</a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="d-flex justify-content-between">
+                  <p class="fw-semibold ms-2" id="carousel-tittle">SULAWESI</p>
+                  <p class="ic-heart me-2">❤️</p>
+                </div>
+                <div class="card">
+                  <img src="./assets/img/ketoprak.jpg" class="img-thumbnail" alt="...">
+                  <div class="d-none">
+                    <h1 class="display-1 text-uppercase">SULAWESI</h1>
+                    <p class="display-3">
+                      Sulawesi, dahulu dikenal sebagai Celebes, adalah sebuah pulau di Indonesia. Sulawesi merupakan salah satu dari empat...
+                    </p>
+                    <a href="./sulawesi/" class="btn btn-primary">LIHAT SEKARANG!</a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="d-flex justify-content-between">
+                  <p class="fw-semibold ms-2" id="carousel-tittle">NTT</p>
+                  <p class="ic-heart me-2">❤️</p>
+                </div>
+                <div class="card">
+                  <img src="./assets/img/labuhan-bajo.jpg" class="img-thumbnail" alt="...">
+                  <div class="d-none">
+                    <h1 class="display-1">NTT</h1>
+                    <p class="display-3">
+                      Nusa Tenggara Timur adalah sebuah provinsi di Indonesia yang meliputi bagian timur Kepulauan Nusa Tenggara. Provinsi ini...
+                    </p>
+                    <a href="./ntt/" class="btn btn-primary">LIHAT SEKARANG!</a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="d-flex justify-content-between">
+                  <p class="fw-semibold ms-2" id="carousel-tittle">KALIMANTAN</p>
+                  <p class="ic-heart me-2">❤️</p>
+                </div>
+                <div class="card">
+                  <img src="./assets/img/rumah-adat.png" class="img-thumbnail" alt="...">
+                  <div class="d-none">
+                    <h1 class="display-1">KALIMANTAN</h1>
+                    <p class="display-3">
+                      Kalimantan, atau juga disebut Borneo oleh dunia internasional. Kalimantan adalah pulau terbesar ketiga di dunia yang...
+                    </p>
+                    <a href="./kalimantan/" class="btn btn-primary">LIHAT SEKARANG!</a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="d-flex justify-content-between">
+                  <p class="fw-semibold ms-2" id="carousel-tittle">BALI</p>
+                  <p class="ic-heart me-2">❤️</p>
+                </div>
+                <div class="card">
+                  <img src="./assets/img/bali.jpg" class="img-thumbnail" style="object-fit: cover;" alt="..." >
+                  <div class="d-none">
+                    <h1 class="display-1">BALI</h1>
+                    <p class="display-3">
+                      Bali adalah sebuah provinsi di Indonesia yang ibu kotanya bernama Denpasar. Provinsi Bali terletak di bagian barat...
+                    </p>
+                    <a href="./bali/" class="btn btn-primary" >LIHAT SEKARANG!</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev carousel-btn" type="button" data-bs-target="#myCarousel"
+              data-bs-slide="prev">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
+                class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+              </svg>
+            </button>
+            <button class="carousel-control-next carousel-btn" type="button" data-bs-target="#myCarousel"
+              data-bs-slide="next">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
+                class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="col col-lg-6 col-12 mb-2 align-content-center" data-aos="fade-up">
+          <h1 class="title-provinsi fw-bold">JAWA TENGAH</h1>
+          <div class="wrapper"></div>
+          <p class="deskripsi-provinsi">Jawa Tengah adalah sebuah provinsi Indonesia yang terletak di bagian tengah Pulau Jawa. Ibu kotanya adalah Semarang...</p>
+          <a href="./jateng/" id="cta" class="btn btn-primary btn-provinsi fw-semibold" data-aos="zoom-out" data-aos-delay="400">
+            LIHAT SEKARANG!
+            <span><i class="bi bi-arrow-right icon-arrow"></i></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- end provinsi -->
+
+  <!-- about us -->
+  <div class="container mt-15 vh-auto" id="tentangkami">
+    <div class="text-center my-5">
+      <h2 class="fw-bold pt-5" data-aos="fade-up">About Us</h2>
+      <p  data-aos="fade-up" data-aos-delay="300">
+        "Paradise Of Indonesia adalah media budaya yang menceritakan tentang beberapa budaya yang ada di Indonesia. dan
+        bukan hanya itu saja, kami mengangkat mulai dari sejarah, filosofi, sampai ke fun fact atau fakta - fakta unik
+        pada budaya tersebut yang dikemas secara ringkas, apik, dan modern "
+      </p>
+    </div>
+    <div class="row justify-content-center px-5 text-center">
+      <h2 class="fw-bold" data-aos="fade-up" data-aos-delay="400">Team Kami</h2>
+      <p class="text-sm mb-5" data-aos="fade-up" data-aos-delay="450">Orang-orang yang ada di balik layar Paradise Of Indonesia</p>
+      <div class="col col-lg-4 col-md-6 mb-5" data-aos="fade-up" data-aos-delay="550">
+        <div class="card shadow" style="width: 18rem;">
+          <img src="./assets/img/Avatar3.jpg" class="card-img-top rounded-bottom" alt="dika" height="300"  style="object-fit: cover;" 
+            width="150">
+          <div class="card-body text-start">
+            <h5 class="card-title text-center pb-3 fw-bold">M. Dika Bima Satria</h5>
+            <p class="card-text">
+            <h5>kontak</h5>
+            <a href="mailto:dika@gmail.com" class="text-decoration-none">
+              <i class="bi bi-envelope"></i>
+              <span>@gmail.com</span>
+            </a>
+            <br>
+            <a href="https://instagram.com/" class="text-decoration-none">
+              <i class="bi bi-instagram"></i>
+              <span>dika</span>
+            </a>
+            <br>
+            <a href="https://id.linkedin.com/in/" class="text-decoration-none">
+              <i class="bi bi-linkedin"></i>
+              <span>dika</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col col-lg-4 col-md-6 mb-5" data-aos="fade-up" data-aos-delay="650">
+        <div class="card shadow" style="width: 18rem;">
+          <img src="./assets/img/Avatar2.jpg" class="card-img-top rounded-bottom" alt="wifqi" height="300"  style="object-fit: cover;"
+            width="150">
+          <div class="card-body text-start">
+            <h5 class="card-title text-center pb-3 fw-bold">Wifqi Wifakul Azmi</h5>
+            <p class="card-text">
+            <h5>kontak</h5>
+            <a href="mailto:wifqi@gmail.com" class="text-decoration-none">
+              <i class="bi bi-envelope"></i>
+              <span>@gmail.com</span>
+            </a>
+            <br>
+            <a href="https://instagram.com/" class="text-decoration-none">
+              <i class="bi bi-instagram"></i>
+              <span>wifqi</span>
+            </a>
+            <br>
+            <a href="#" class="text-decoration-none">
+              <i class="bi bi-linkedin"></i>
+              <span>wifqi</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col col-lg-4 col-md-6 mb-5" data-aos="fade-up" data-aos-delay="750">
+        <div class="card shadow" style="width: 18rem;">
+          <img src="./assets/img/Avatar1.jpg" class="card-img-top rounded-bottom" alt="aldiva" height="300"  style="object-fit: cover;"
+            width="150">
+          <div class="card-body text-start">
+            <h5 class="card-title text-center pb-3 fw-bold">Aldiva Fadlie Fauzan</h5>
+            <p class="card-text">
+            <h5>kontak</h5>
+            <a href="mailto:aldiva@gmail.com" class="text-decoration-none">
+              <i class="bi bi-envelope"></i>
+              <span>@gmail.com</span>
+            </a>
+            <br>
+            <a href="https://instagram.com/" class="text-decoration-none">
+              <i class="bi bi-instagram"></i>
+              <span>Aldiva</span>
+            </a>
+            <br>
+            <a href="https://id.linkedin.com/in/" class="text-decoration-none">
+              <i class="bi bi-linkedin"></i>
+              <span>Aldiva</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    <div class="row justify-content-center text-center mb-3">
+      <div class="col-md-8">
+        <p class="text-sm">Kami dengan senang hati menerima timbal balik guna meningkatkan kualitas konten kami</p>
+      </div>
+    </div>
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-md-6">
+        <p>Apakah artikel ini membantu?</p>
+        <div class="reaction">
+          <a  id="ic-reaction" onclick="handleEmoji(this)">
+            😒
+          </a>
+          <a id="ic-reaction" onclick="handleEmoji(this)">
+            😑
+          </a>
+          <a id="ic-reaction" onclick="handleEmoji(this)">
+            🙂
+          </a>
+          <a id="ic-reaction" onclick="handleEmoji(this)">
+            😀
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="lead text-center disable fw-light feedback-response mb-4">
+      Terima kasih atas masukannya. Kami sangat senang bisa membantu!
+    </p>
+    <div class="disable text-center mb-5" id="container-feedback">
+      <form class="" >
+        <div class="mb-3" >
+          <div class="form-floating" >
+            <input type="text" class="form-control form" id="name" aria-describedby="nameHelp">
+            <label for="name">Full Name</label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="form-floating">
+            <textarea class="form-control form" placeholder="Leave a feedback here" id="feedback-placeholder"
+              style="height: 100px"></textarea>
+            <label for="feedback-placeholder">Comments</label>
+          </div>
+        </div>
+        <a onclick="handleFeedback()" class="btn btn-primary shadow-lg fw-bold" id="send-feedback">Submit</a>
+      </form>
+    </div>
+  </div>
+
+  <footer class="mt-auto text-white fw-bold" style="background-color: #475284;">
+    <div class="p-5 container">
+      <div class="row justify-content-center">
+        <div class="col-lg-4 mb-4">
+          <img src="./assets/img/logo-light.png" alt="logo Paradise Of Indonesia" width="100px">
+          <p>@ 2024 Paradise Of Indonesia, All rights reserved.</p>
+        </div>
+        <div class="col-lg-4 mb-4">
+        </div>
+        <div class="col-lg-4 mb-4 mx-auto">
+          <p><a href="./" class="text-decoration-none text-white">Home</a></p>
+          <p><a href="#provinsi" class="text-decoration-none text-white">Provinsi</a></p>
+          <p><a href="#" class="text-decoration-none text-white">About us</a></p>
+          <p><a href="#tentangkami" class="text-decoration-none text-white">Contact</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-dark p-2 text-white d-flex justify-content-around">
+      <p class="fw-lighter ">Build with ❤️ using 
+        <a href="https://getbootstrap.com/" class="text-white">
+          Bootstrap
+        </a>.
+      </p>
+    </div>
+  </footer>
+
+  <script src="./assets/js/gsap/gsap.min.js"></script>
+  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+  <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.141.0/build/three.module.js"
+        }
+      }
+    </script>
+  <script type="module" src="./assets/js/globe.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/script.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>

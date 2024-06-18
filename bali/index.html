@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0dcaf0">  
+  <link rel="shortcut icon" href="./assets/img/logo-light.png" type="image/x-icon">
+  <title>Paradise Of Indonesia</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css"
+    integrity="sha256-6YrKt7vMU9e4bwtlblASqhvvEt4/0JEQJ/zyWOFKnaM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/splide-4.0.7/dist/css/splide.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body class="bg-white">
+  <!-- preloader -->
+  <div class="preloader">
+    <div class="loading">
+      <img src="./assets/img/preloader.gif" width="80">
+    </div>
+  </div>
+
+  <!-- navbar -->
+  <nav class="navbar shadow p-3 mb-5 bg-transparent navbar-expand-lg sticky-top rounded-bottom fw-bold">
+    <div class="container">
+      <a class="navbar-brand" href="../">
+        <img src="./assets/img/logo-dark.png" alt="logo" width="40" height="30" class="d-inline-block logo-dark align-text-top">
+        <img src="./assets/img/logo-light.png" alt="logo" width="40" height="30" class="d-inline-block logo-light d-none align-text-top">
+        <span class="fw-bold fs-6">Paradise Of Indonesia</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list-nested" style="font-size: 20px; color: cornflowerblue;"></i>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="../">Home</a>
+          </li>
+          <li class="nav-item mx-2 dropdown">
+            <button class="btn btn-primary  dropdown-toggle" type="button" id="dropdown" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Budaya
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdown">
+              <li><a class="dropdown-item" href="./bahasa-daerah/">Bahasa Daerah</a></li>
+              <li><a class="dropdown-item" href="./kapurusa/">Kapurusa</a></li>
+              <li><a class="dropdown-item" href="./lagu-daerah/">Lagu Daerah</a></li>
+              <li><a class="dropdown-item" href="./nama-khas/">Nama Khas</a></li>
+              <li><a class="dropdown-item" href="./nyepi/">Nyepi</a></li>
+              <li><a class="dropdown-item" href="./pakaian-adat/">Pakaian Adat</a></li>
+              <li><a class="dropdown-item" href="./perang-pandan/">Perang Pandan</a></li>
+              <li><a class="dropdown-item" href="./rindik/">Rindik</a></li>
+              <li><a class="dropdown-item" href="./rumah-adat/">Rumah Adat</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link active" href="#galery">Galery</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link active" href="#about-us">About Us</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link active" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item ms-2">
+            <a class="nav-link active waves-effect waves-light" id="theme-changer">
+              <img src="./assets/img/night-mode.png" class="img-darkmode" alt="ligth mode">
+            </a>
+          </li>
+          <li class="nav-item ms-2">
+            <span id="btn-search" class="btn"><i class="bi bi-search text-white bg-info rounded p-2"></i></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- end navbar -->
+
+  
+  <!-- progres bar -->
+  <div class="progress-container fixed-top">
+    <span class="progress-bar"></span>
+  </div>
+
+  <!-- search modal -->
+  <div id="search-modal" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog text-dark modal-dialog-scrollable pt-5">
+      <div class="modal-content">
+        <div class="modal-header shadow">
+          <input class="form-control me-2" type="search" placeholder="Search" id="search-container" aria-label="Search">
+        </div>
+        <div class="modal-body">
+          <div class="search-result p-3"></div>
+        </div>
+        <div class="modal-footer p-2">
+          <span class="badge bg-secondary">ESC to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of search modal -->
+
+  <!-- home -->
+  <div class="container vh-100" id="home" >
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-6 position-absolute top-50 start-50 translate-middle text-center" data-aos="fade-up">
+        <h3 class="fw-semibold">Bali</h3>
+        <p>
+          Bali dikenal dengan sebutan Pulau Dewata. Terletak di antara Pulau Jawa dan Pulau Lombok. Bali sebelumnya merupakan bagian dari Provinsi Sunda Kecil bersama dengan Lombok, Sumbawa, Sumba, Flores, dan Timor. Pada tahun 1958 Bali resmi menjadi provinsi sendiri dengan ibukota Singaraja. Kemudian pada tahun 1960 berpindah ke Denpasar. Provinsi Bali terdiri dari Pulau Bali dan pulau-pulau kecil di sekitarnya antara lain Nusa Penida, Nusa Lembongan, Nusa Ceningan, dan Pulau Serangan. Secara keseluruhan Bali memiliki sekitar 85 pulau, termasuk yang tidak berpenghuni.
+        </p>
+        <a href="#galery" class="btn btn-lg btn-secondary fw-bold border-white bg-primary">Jelajah Sekarang!</a>
+      </div>
+    </div>
+  </div>
+  <!-- end home -->
+
+  <!-- budaya -->
+  <div class="container-fluid vh-100 py-5" id="galery" style="background-color: #475284;">
+    <div class="row justify-content-center align-content-center" >
+      <div class="col-lg-8 col-md-8 col-sm-8 mx-5">
+        <h1 class="my-4 text-white text-center fw-semibold py-5" >Galery</h1>
+        <div class="row py-4 mx-5">
+          <div class="col" onclick="bukaModal()" style="cursor: pointer;" data-aos="fade-up" data-aos-delay="400">
+            <img src="../assets/img/rumah-adat.png" alt="rumah-adat" class="img-fluid rounded" style="height: 400px; object-fit:cover; width: 300px">
+          </div>
+          <div class="col hide-mobile" onclick="bukaModal()" style="cursor: pointer;" data-aos="fade-up" data-aos-delay="450">
+            <img src="../assets/img/pakaian-adat.jpg" alt="pakaian-adat" class="img-fluid rounded" style="height: 400px; object-fit:cover; width: 3 00px">
+          </div>
+          <div class="col hide-mobile" onclick="bukaModal()" style="cursor: pointer;" data-aos="fade-up" data-aos-delay="500">
+            <img src="../assets/img/perang-pandan.jpg" alt="perang-pandan" class="img-fluid rounded" style="height: 400px; object-fit:cover; width: 3 00px">
+          </div>
+          <div class="col hide-mobile" onclick="bukaModal()" style="cursor: pointer;" data-aos="fade-up" data-aos-delay="550">
+            <img src="../assets/img/tari-kecak.jpg" alt="tari-kecak" class="img-fluid rounded" style="height: 400px; object-fit:cover; width: 300px">
+          </div>
+        </div>
+        <span class="text-white ms-5" style="cursor: pointer;" onclick="bukaModal()" data-aos="zoom-out" data-aos-delay="400">
+          Lihat lainnya <i class="bi bi-arrow-right"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+  <!-- end budaya -->
+
+  <!-- Light Box -->
+  <!-- Modal -->
+  <div class="modalku bg-black bg-opacity-75" id="modals">
+    <span class="close cursor" onclick="tutupModal()">&times;</span>
+    <div class="modal-content ">
+      <section id="main-carousel" class="splide" aria-label="Beautiful Images">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/bahasa-daerah.jpg" alt="" class="img-fluid rounded">
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/kapurusa.jpg" alt="" class="img-fluid rounded">
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/lagu-daerah.jpg" alt="" class="img-fluid rounded">
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/nama-khas.png" alt="" class="img-fluid rounded">
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/nyepi.jpg" alt="" class="img-fluid rounded">
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/pakaian-adat.jpg" alt="" class="img-fluid rounded">
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/perang-pandan.jpg" alt="" class="img-fluid rounded">
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/rindik.jpg" alt="" class="img-fluid rounded">
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/rumah-adat.png" alt="" class="img-fluid rounded">
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/tari-kecak.jpg" alt="" class="img-fluid rounded">
+            </li>
+          </ul>
+        </div>
+      </section>
+      
+      <section
+        id="thumbnail-carousel"
+        class="splide"
+        aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel."
+      >
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/bahasa-daerah.jpg" alt="" class="img-fluid">
+            </li>
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/kapurusa.jpg" alt="" class="img-fluid">
+            </li>
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/lagu-daerah.jpg" alt="" class="img-fluid">
+            </li>
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/nama-khas.png" alt="" class="img-fluid">
+            </li>
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/nyepi.jpg" alt="" class="img-fluid">
+            </li>
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/pakaian-adat.jpg" alt="" class="img-fluid">
+            </li>
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/perang-pandan.jpg" alt="" class="img-fluid">
+            </li>
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/rindik.jpg" alt="" class="img-fluid">
+            </li>
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/rumah-adat.png" alt="" class="img-fluid">
+          </ul>
+        </div>
+      </section>      
+    </div>
+  </div>
+  <!-- end of light box -->
+
+  <!-- this button will visivle if documen scolled down -->
+  <button onclick="topFunction()" id="go-top" title="Go to top" class="bg-info">
+    <i class="bi bi-arrow-up-circle"></i>
+  </button>
+
+  <!-- container content list -->
+  <div class="container my-5 vh-auto" >
+    <div class="text-center pt-5">
+      <h2 class="fw-bold"  data-aos="fade-up" data-aos-dalay="200">KONTEN</h2>
+      <p class="pb-5 article text-center" data-aos="fade-up" data-aos-dalay="350">Beberapa content unggulan kami</p>
+    </div>
+    <div class="row align-content-center pt-4">
+      <div class="col-10 mx-auto">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 mb-2" data-aos="zoom-in-up" data-aos-dalay="500">
+            <a href="#budaya" class="text-decoration-none text-black">
+              <div class="card shadow-sm mb-2 card-content text-center">
+                <div class="row p-4">
+                  <div class="col">
+                    <img src="../assets/img/budaya.png" class="ms-4 me-0" width="150px" height="150px"  alt="" srcset="">
+                  </div>
+                  <div class="col">
+                    <h5 class="fw-bold text-start">BUDAYA</h5>
+                    <p  class="text-start">Beberapa budaya yang kami angkat</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-6 mb-2"  >
+            <a href="#geografi" class="text-decoration-none text-black">
+              <div class="card shadow-sm mb-2 card-content text-center" data-aos="zoom-in-up" data-aos-dalay="600">
+                <div class="row p-4">
+                  <div class="col">
+                    <img src="../assets/img/geografi.png" class="ms-4 me-0" width="150px" height="150px"  alt="" srcset="">
+                  </div>
+                  <div class="col ">
+                    <h5 class="fw-bold text-start">GEOGRAFI</h5>
+                    <p  class="text-start">Kondisi geografis pada provinsi</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-6"  >
+            <a href="#sejarah" class="text-decoration-none text-black">
+              <div class="card shadow-sm mb-2 card-content text-center" data-aos="zoom-in-up" data-aos-dalay="700">
+                <div class="row p-4">
+                  <div class="col">
+                    <img src="../assets/img/sejarah.png" class="ms-4 me-0" width="150px" height="150px"  alt="" srcset="">
+                  </div>
+                  <div class="col ">
+                    <h5 class="fw-bold text-start">SEJARAH</h5>
+                    <p  class="text-start">Sejarah lahirnya atau terciptanya</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-6"  >
+            <a href="#landmark" class="text-decoration-none text-black">
+              <div class="card shadow-sm mb-2 card-content text-center" data-aos="zoom-in-up" data-aos-dalay="800">
+                <div class="row p-4">
+                  <div class="col">
+                    <img src="../assets/img/landmark.png" class="ms-4 me-0" width="150px" height="150px" alt="" srcset="">
+                  </div>
+                  <div class="col ">
+                    <h5 class="fw-bold text-start">LANDMARK</h5>
+                    <p  class="text-start">Landmark atau markah pada provinsi</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="p-4 text-white main-content" style="background-color: #475284;">  
+    <!-- sejarah -->
+    <div class="container mt-4 mb-5 px-lg-5" id="sejarah">
+      <h2 class="fw-bold">SEJARAH</h2>
+      <div class="img-main text-center">
+        <img src="../assets/img/bali.jpg" alt="bali" class="img-fluid rounded">
+      </div>
+
+      <div class="article-main mt-4">
+        <p class="article">
+          Bali telah dihuni oleh bangsa Austronesia sekitar tahun 2000 sebelum Masehi yang bermigrasi dan berasal dari Taiwan melalui Maritime Asia Tenggara. Budaya dan bahasa dari Orang Bali demikian erat kaitannya dengan orang-orang dari kepulauan Indonesia, Malaysia, Filipina, dan Oseania. Alat-alat batu yang berasal dari saat itu telah ditemukan di dekat desa Cekik di sebelah barat pulau Bali.
+          Pada masa Bali kuno, terdapat sembilan sekte Hindu yaitu Pasupata, Bhairawa, Siwa Shidanta, Waisnawa, Bodha, Brahma, Resi, Sora dan Ganapatya. Setiap sekte menghormati dewa tertentu sebagai Ketuhanan pribadinya. Budaya Bali sangat dipengaruhi oleh budaya India, Cina, dan khususnya Hindu, mulai sekitar abad 1 Masehi.
+          Nama Bali Dwipa (“pulau Bali”) telah ditemukan dari berbagai prasasti, termasuk pilar prasasti Blanjong yang ditulis oleh Sri Kesari Warmadewa pada tahun 914 Masehi yang menyebutkan “Walidwipa”.
+          Pada masa itu sistem irigasi Subak yang kompleks sudah dikembangkan untuk menanam padi. Beberapa tradisi keagamaan dan budaya masih ada sampai saat ini dan dapat ditelusuri kembali pada masa itu. Kerajaan Hindu Majapahit (1293-1520 Masehi) di Jawa Timur mendirikan sebuah koloni di Bali pada tahun 1343. Ketika masa kejayaan sudah menurun, ada eksodus besar-besaran dari intelektual, seniman, pendeta, dan musisi dari Jawa ke Bali pada abad ke-15. </p>
+      </div>
+    </div>
+    <!-- end of sejarah -->
+
+    <!-- geografi -->
+    <div class="container mt-4 mb-5 px-lg-5" id="geografi">
+      <h2 class="fw-bold">GEOGRAFIS</h2>
+      <div class="img-main text-center">
+        <img src="../assets/img/geografis.jpg" alt="borobudur" class="img-fluid rounded">
+      </div>
+
+      <div class="article-main mt-4">
+        <p class="article">
+          Pulau Bali adalah bagian dari Kepulauan Sunda Kecil sepanjang 153 km dan selebar 112 km sekitar 3,2 km dari Pulau Jawa. Secara geografis, Bali terletak di 8°25′23″ Lintang Selatan dan 115°14′55″ Bujur Timur yang membuatnya beriklim tropis seperti bagian Indonesia yang lain.
+
+          Gunung Agung adalah titik tertinggi di Bali setinggi 3.148 m. Gunung berapi ini terakhir meletus pada Maret 1963. Gunung Batur juga salah satu gunung yang ada di Bali. Sekitar 30.000 tahun yang lalu, Gunung Batur meletus dan menghasilkan bencana yang dahsyat di bumi. Berbeda dengan di bagian utara, bagian selatan Bali adalah dataran rendah yang dialiri sungai-sungai.
+          
+          Berdasarkan relief dan topografi, di tengah-tengah Pulau Bali terbentang pegunungan yang memanjang dari barat ke timur dan di antara pegunungan tersebut terdapat gugusan gunung berapi yaitu Gunung Batur dan Gunung Agung serta gunung yang tidak berapi, yaitu Gunung Merbuk, Gunung Patas dan Gunung Seraya. Adanya pegunungan tersebut menyebabkan Daerah Bali secara Geografis terbagi menjadi 2 (dua) bagian yang tidak sama yaitu Bali Utara dengan dataran rendah yang sempit dan kurang landai dan Bali Selatan dengan dataran rendah yang luas dan landai. Kemiringan lahan Pulau Bali terdiri dari lahan datar (0-2%) seluas 122.652 ha, lahan bergelombang (2-15%) seluas 118.339 ha, lahan curam (15-40%) seluas 190.486 ha dan lahan sangat curam (>40%) seluas 132.189 ha. Provinsi Bali memiliki 4 (empat) buah danau yang berlokasi di daerah pegunungan, yaitu Danau Beratan atau Bedugul, Buyan, Tamblingan, dan Batur. Alam Bali yang indah menjadikan pulau Bali terkenal sebagai daerah wisata.
+          
+          Ibu kota Bali adalah Denpasar. Tempat-tempat penting lainnya adalah Ubud sebagai pusat kesenian dan peristirahatan, terletak di Kabupaten Gianyar. Nusa Lembongan adalah sebagai salah satu tempat menyelam (diving), terletak di Kabupaten Klungkung. Sedangkan Kuta, Seminyak, Jimbaran dan Nusa Dua adalah beberapa tempat yang menjadi tujuan utama pariwisata, baik wisata pantai maupun tempat peristirahatan, spa, dan lain-lain, terletak di Kabupaten Badung.
+
+          Luas wilayah Provinsi Bali adalah 5.636,66 km2 atau 0,29% luas wilayah Negara Kesatuan Republik Indonesia. Secara administratif Provinsi Bali terbagi atas 8 kabupaten, 1 kotamadya, 55 kecamatan, dan 701 desa/kelurahan.
+          </p>
+      </div>
+    </div>
+    <!-- end of geografi -->
+
+    <!-- landmark -->
+    <div class="container mt-4 mb-5 px-lg-5" id="landmark">
+      <h2 class="fw-bold">LANDMARK</h2>
+      <div class="img-main text-center">
+        <img src="../assets/img/Landmarkk.jpg" alt="Pura Tirta Empul" class="img-fluid rounded">
+      </div>
+
+      <div class="article-main mt-4">
+        <p class="article">
+          Objek wisata Pura Tirta Empul Tampak Siring berada di Jalan Tirta, desa Manukaya, Kecamatan Tampaksiring, Kabupaten Gianyar, Bali. Tampak Siring adalah nama sebuah kecamatan di kabupaten Gianyar Bali. Luas dari wilayah kecamatan Tampak Siring, sebesar 42,63 kilometer persegi.
+          Mata air ini di beri nama Tirta Empul yang berarti mata air suci yang timbul dari tanah. Kemudian, di sekitar area mata air di bangun pura untuk memuja dewa Indra yang diberi nama Pura Tirta Empul.
+          Keunikan utama dari pura Tirta Empul terdapat pada mata air alami yang berada di dalam area pura. Air dari mata air ini di gunakan oleh masyarakat pemeluk agama Hindu, untuk permandian menyucikan diri dan memohon tirta suci. Dewa yang di puja di Pura Tirta Empul adalah dewa Indra.
+        </p>
+      </div>
+    </div>
+  <!-- end of landmark -->
+  </div>
+
+  <!-- list budaya -->
+  <div class="container my-5">
+    <h2 class="fw-bold mb-4 px-5" id="budaya">Budaya Jawa Tengah</h2>
+    <hr>
+    <div class="container my-5 vh-100 overflow-auto" id="list-budaya-dekstop">
+      <div class="row  m-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">BAHASA DAERAH</h3>
+          <p class="article pt-4 text-justify">
+            “Bahasa Bali adalah sebuah bahasa Austronesia dari cabang Sundik dan lebih spesifik dari anak cabang Bali-Sasak. Bahasa ini terutama dipertuturkan di pulau Bali, pulau Lombok bagian barat, dan sedikit di ujung timur pulau Jawa.”
+          </p>
+          <a href="./bahasa-daerah/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/bahasa-daerah.jpg" alt="" class="img-fluid rounded" style="width: 50%; height: 50%;">
+          </div>
+        </div>
+      </div>
+      <div class="row  m-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">KAPURUSA</h3>
+          <p class="article pt-4 text-justify">
+            “Purusa dalam ajaran agama Hindu dimaknai sebagai keturunan laki-laki dan/atau perempuan/putrika yang suputra, yang menjalankan dan meneruskan swadarmanya sebagai keturunan kapurusa.”
+          </p>
+          <a href="./kapurusa/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/kapurusa.jpg" alt="" class="img-fluid rounded" style="width: 50%; height: 50%;">
+          </div>
+        </div>
+      </div>
+      <div class="row  m-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">LAGU DAERAH</h3>
+          <p class="article pt-4 text-justify">
+            “Membahas tentang Bali memang selalu menarik dengan banyaknya ragam budaya yang tersaji. Bahkan masyarakat pun mendukung untuk melestarikan dan mempertahankan budaya daerahnya tersebut, termasuk lagu-lagu daerah.  Salah satu di antaranya lagu Putri Cening Ayu dari Bali”
+          </p>
+          <a href="./lagu-daerah/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/lagu-daerah.jpg" alt="" class="img-fluid rounded" style="width: 50%; height: 50%;">
+          </div>
+        </div>
+      </div>
+      <div class="row  m-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">NAMA KHAS BALI</h3>
+          <p class="article pt-4 text-justify">
+            “Nama orang Bali memiliki aturan yang harus dipenuhi dan menjadikan sebuah identitas khas budaya masyarakat Bali. Bagi masyarakat Bali, pemberian nama kepada seseorang tidak boleh asal pilih karena mengikuti aturan budaya yang telah ada semenjak dahulu.”
+          </p>
+          <a href="./nama-khas/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/nama-khas.png" alt="" class="img-fluid rounded" style="width: 50%; height: 50%;">
+          </div>
+        </div>
+      </div>
+      <div class="row  mx-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">NYEPI</h3>
+          <p class="article pt-4 text-justify">
+            “Nyepi adalah hari suci umat Hindu yang dirayakan setiap Tahun Baru Saka. Hari ini jatuh pada hitungan Tilem Kesanga (IX) yang dipercayai merupakan hari penyucian dewa-dewa yang berada di pusat samudera yang membawa intisari amerta air hidup. Untuk itu umat Hindu melakukan pemujaan suci terhadap mereka.”
+          </p>
+          <a href="./nyepi/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/nyepi.jpg" alt="" class="img-fluid rounded" style="width: 50%; height: 50%;">
+          </div>
+        </div>
+      </div>
+      <div class="row  mx-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">PAKAIAN ADAT</h3>
+          <p class="article pt-4 text-justify">
+            “Jenis budaya lokal seperti pakaian tradisional adat Bali ini memiliki berbagai jenis pakaian adat, seperti pakaian adat madya yang biasa digunakan untuk keperluan adat seperti ke tempat upacara pernikahan ataupun ke balai pertemuan yang berhubungan dengan adat.”
+          </p>
+          <a href="./pakaian-adat/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/pakaian-adat.jpg" alt="" class="img-fluid rounded" style="width: 50%; height: 50%;">
+          </div>
+        </div>
+      </div>
+      <div class="row  mx-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">PERANG PANDAN</h3>
+          <p class="article pt-4 text-justify">
+            “Perang pandan adalah salah satu tradisi yang ada di Desa Tenganan, Kecamatan Karangasem, Bali. Perang pandan juga disebut dengan istilah makere-kere. Peran pandan merupakan salah satu tradisi yang dilakukan untuk menghormati dewa Indra atau Dewa perang. Perang pandan merupakan bagian dari ritual Sasihh Sembah. Sasih sembah ialah ritual terbesar yang ada di Desa Tenganan.”
+          </p>
+          <a href="./perang-pandan/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/perang-pandan.jpg" alt="" class="img-fluid rounded" style="width: 50%; height: 50%;">
+          </div>
+        </div>
+      </div>
+      <div class="row  mx-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">RINDIK</h3>
+          <p class="article pt-4 text-justify">
+            “Rindik adalah alat musik yang terbuat dari batang bambu yang dibentuk sedemikian rupa hingga mampu menghasilkan suara merdu saat dipukul. Alat yang digunakan untuk memukul rindik disebut panggul. Jumlah panggul yang digunakan adalah dua batang dan tiga batang.”
+          </p>
+          <a href="./rindik/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/rindik.jpg" alt="" class="img-fluid rounded" style="width: 50%; height: 50%;">
+          </div>
+        </div>
+      </div>
+      <div class="row  mx-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">RUMAH ADAT</h3>
+          <p class="article pt-4 text-justify">
+            “Aturan-aturan yang digunakan dalam membuat pekarangan dan membangun rumah adat, menerapkan aturan-aturan yang ada pada “Asta Kosala Kosali” dan memenuhi aspek parahyangan (tempat pemujaan), Palemahan (lingkungan) dan pawongan (penghuni rumah), semuanya memiliki nilai penting dan filosofi dalam arsitektur rumah dan pekarangan.”
+          </p>
+          <a href="./rumah-adat/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/rumah-adat.png" alt="" class="img-fluid rounded" style="width: 50%; height: 50%;">
+          </div>
+        </div>
+      </div>
+      <div class="row  mx-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">TARI KECAK</h3>
+          <p class="article pt-4 text-justify">
+            “Tari kecak adalah seni tari yang berasal dari Bali. Seni tari kecak ini dipertunjukkan oleh puluhan penari laki-laki yang duduk berbaris dengan pola melingkar dan dengan irama tertentu menyerukan "cak, cak, cak" serta mengangkat kedua lengan.”
+          </p>
+          <a href="./tari-kecak/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/tari-kecak.jpg" alt="" class="img-fluid rounded" style="width: 50%; height: 50%;">
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+    <div class="my-5 vh-100 overflow-auto d-none" id="list-budaya-mobile">
+      <div class="row d-flex flex-column justify-content-center">
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/bahasa-daerah.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">BAHASA DAERAH</h5>
+              <p class="card-text">“Bahasa Bali adalah sebuah bahasa Austronesia dari cabang Sundik dan lebih spesifik dari anak cabang Bali-Sasak. Bahasa ini terutama dipertuturkan di pulau Bali, pulau Lombok bagian barat, dan sedikit di ujung timur pulau Jawa.”</p>
+              <a href="./bahasa-daerah/" class="btn btn-primary btn-outline-light">Lihat</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/kapurusa.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">KAPURUSA</h5>
+              <p class="card-text">“Purusa dalam ajaran agama Hindu dimaknai sebagai keturunan laki-laki dan/atau perempuan/putrika yang suputra, yang menjalankan dan meneruskan swadarmanya sebagai keturunan kapurusa.”</p>
+              <a href="./kapurusa/" class="btn btn-primary btn-outline-light">Lihat</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/lagu-daerah.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">LAGU DAERAH</h5>
+              <p class="card-text">“Membahas tentang Bali memang selalu menarik dengan banyaknya ragam budaya yang tersaji. Bahkan masyarakat pun mendukung untuk melestarikan dan mempertahankan budaya daerahnya tersebut, termasuk lagu-lagu daerah.  Salah satu di antaranya lagu Putri Cening Ayu dari Bali”</p>
+              <a href="./lagu-daerah/" class="btn btn-primary btn-outline-light">Lihat</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/nama-khas.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">NAMA KHAS BALI</h5>
+              <p class="card-text">“Nama orang Bali memiliki aturan yang harus dipenuhi dan menjadikan sebuah identitas khas budaya masyarakat Bali. Bagi masyarakat Bali, pemberian nama kepada seseorang tidak boleh asal pilih karena mengikuti aturan budaya yang telah ada semenjak dahulu.”</p>
+              <a href="./nama-khas/" class="btn btn-primary btn-outline-light">Lihat</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/nyepi.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">NYEPI</h5>
+              <p class="card-text">“Nyepi adalah hari suci umat Hindu yang dirayakan setiap Tahun Baru Saka. Hari ini jatuh pada hitungan Tilem Kesanga (IX) yang dipercayai merupakan hari penyucian dewa-dewa yang berada di pusat samudera yang membawa intisari amerta air hidup. Untuk itu umat Hindu melakukan pemujaan suci terhadap mereka.”</p>
+              <a href="./nyepi/" class="btn btn-primary btn-outline-light">Lihat</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/pakaian-adat.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">PAKAIAN ADAT</h5>
+              <p class="card-text">“Jenis budaya lokal seperti pakaian tradisional adat Bali ini memiliki berbagai jenis pakaian adat, seperti pakaian adat madya yang biasa digunakan untuk keperluan adat seperti ke tempat upacara pernikahan ataupun ke balai pertemuan yang berhubungan dengan adat.”</p>
+              <a href="./pakaian-adat/" class="btn btn-primary btn-outline-light">Lihat</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/perang-pandan.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">PERANG PANDAN</h5>
+              <p class="card-text">“Perang pandan adalah salah satu tradisi yang ada di Desa Tenganan, Kecamatan Karangasem, Bali. Perang pandan juga disebut dengan istilah makere-kere. Peran pandan merupakan salah satu tradisi yang dilakukan untuk menghormati dewa Indra atau Dewa perang. Perang pandan merupakan bagian dari ritual Sasihh Sembah. Sasih sembah ialah ritual terbesar yang ada di Desa Tenganan.”</p>
+              <a href="./perang-pandan/" class="btn btn-primary btn-outline-light">Lihat</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/rindik.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">RINDIK</h5>
+              <p class="card-text">“Rindik adalah alat musik yang terbuat dari batang bambu yang dibentuk sedemikian rupa hingga mampu menghasilkan suara merdu saat dipukul. Alat yang digunakan untuk memukul rindik disebut panggul. Jumlah panggul yang digunakan adalah dua batang dan tiga batang.”</p>
+              <a href="./rindik/" class="btn btn-primary btn-outline-light">Lihat</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/rumah-adat.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">RUMAH ADAT</h5>
+              <p class="card-text">“Aturan-aturan yang digunakan dalam membuat pekarangan dan membangun rumah adat, menerapkan aturan-aturan yang ada pada “Asta Kosala Kosali” dan memenuhi aspek parahyangan (tempat pemujaan), Palemahan (lingkungan) dan pawongan (penghuni rumah), semuanya memiliki nilai penting dan filosofi dalam arsitektur rumah dan pekarangan.”</p>
+              <a href="./rumah-adat/" class="btn btn-primary btn-outline-light">Lihat</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/tari-kecak.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">TARI KECAK</h5>
+              <p class="card-text">“Tari kecak adalah seni tari yang berasal dari Bali. Seni tari kecak ini dipertunjukkan oleh puluhan penari laki-laki yang duduk berbaris dengan pola melingkar dan dengan irama tertentu menyerukan "cak, cak, cak" serta mengangkat kedua lengan.”
+              </p>
+              <a href="./tari-kecak/" class="btn btn-primary btn-outline-light">Lihat</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of list budaya -->
+
+  <!-- about us -->
+  <div class="container" id="about-us">
+    <div class="row justify-content-center my-5 pt-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 mb-5">
+          <div class="card card-content">
+            <div class="card-body">
+              <p>Apakah artikel ini membantu?</p>
+              <div class="reaction mb-2">
+                <a onclick="handleEmoji(this)">
+                  😒
+                </a>
+                <a onclick="handleEmoji(this)">
+                  😑
+                </a>
+                <a onclick="handleEmoji(this)">
+                  🙂
+                </a>
+                <a onclick="handleEmoji(this)">
+                  😀
+                </a>
+              </div>
+              <div class="text-center" id="container-feedback">
+                <form class="">
+                  <div class="mb-3">
+                    <div class="form-floating">
+                      <input type="text" class="form-control form" id="name" aria-describedby="nameHelp">
+                      <label for="name">Full Name</label>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="form-floating">
+                      <textarea class="form-control form" placeholder="Leave a feedback here" id="feedback-placeholder"
+                        style="height: 100px"></textarea>
+                      <label for="feedback-placeholder">Comments</label>
+                    </div>
+                  </div>
+                  <a onclick="handleFeedback()" class="btn btn-primary shadow-lg" id="send-feedback">Submit</a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-5">
+          <div class="card mb-2 card-content">
+            <div class="card-body">
+              <h5>Contact Us</h5>
+              <p>Hubungi kami sekarang!</p>
+              <div id="container-feedback">
+                <form class="">
+                  <div class="mb-3">
+                    <div class="form">
+                      <label for="name">Full Name</label>
+                      <input type="text" class="form-control form" id="name" aria-describedby="nameHelp">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="form">
+                      <label for="email">Email Address</label>
+                      <input type="email" class="form-control form" id="email" aria-describedby="email">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="form-floating">
+                      <textarea class="form-control form" placeholder="Leave a feedback here" id="feedback-placeholder"
+                        style="height: 100px"></textarea>
+                      <label for="feedback-placeholder">Comments</label>
+                    </div>
+                  </div>
+                  <a onclick="handleFeedback()" class="btn btn-primary shadow-lg" id="send-feedback">Submit</a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <footer class="mt-auto text-white fw-bold" style="background-color: #475284;">
+    <div class="p-5 container">
+      <div class="row justify-content-center">
+        <div class="col-lg-4 mb-4">
+          <img src="./assets/img/logo-light.png" alt="logo Paradise Of Indonesia" width="100px">
+          <p>@ 2024 Paradise Of Indonesia, All rights reserved.</p>
+        </div>
+        <div class="col-lg-4 mb-4">
+        </div>
+        <div class="col-lg-4 mb-4 mx-auto">
+          <h5>Navigasi</h5>
+          <p><a href="./" class="text-decoration-none">Home</a></p>
+          <p><a href="#" class="text-decoration-none">Provinsi</a></p>
+          <p><a href="../../index.html#tentangkami" class="text-decoration-none">About us</a></p>
+          <p><a href="#" class="text-decoration-none">Contact</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-dark p-2 text-white d-flex justify-content-around">
+      <p class="fw-lighter ">Build with ❤️ using 
+        <a href="https://getbootstrap.com/" class="text-white">
+          Bootstrap
+        </a>
+      </p>
+    </div>
+  </footer>
+
+      
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script src="../assets/splide-4.0.7/dist/js/splide.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+      <script src="./assets/js/script.js"></script>
+      <script>
+        AOS.init();
+        document.addEventListener( 'DOMContentLoaded', () => {
+          
+          try {
+            let main = new Splide( '#main-carousel', {
+              type      : 'fade',
+              rewind    : true,
+              pagination: false,
+              arrows    : true,
+            } );
+
+            let thumbnails = new Splide( '#thumbnail-carousel', {
+              fixedWidth  : 100,
+              fixedHeight : 60,
+              gap         : 10,
+              rewind      : true,
+              pagination  : false,
+              isNavigation: true,
+              breakpoints : {
+                600: {
+                  fixedWidth : 60,
+                  fixedHeight: 44,
+                },
+              },
+            } );
+
+            main.sync( thumbnails );
+            main.mount();
+            thumbnails.mount();
+          } catch (error) {
+            console.log(error.message)
+          }
+
+          const btnSearch = document.getElementById('btn-search');
+
+          // search modal
+          btnSearch.addEventListener('click', () =>{
+            $('.navbar-toggler').click()
+            $("#search-modal").modal('show');
+            $('.search-result').empty();
+            document.querySelector("#search-container").value = ''
+          })
+
+
+          $('#search-modal').on('click', () =>{
+            document.querySelector("#search-container").addEventListener('input', (e) =>{
+              let searchValue = e.target.value.toLowerCase();
+              let paragrafContainer = document.querySelectorAll('p');
+              
+              
+              document.querySelector('input').addEventListener('keypress', (e) => {
+                if(e.key == 'Enter'){
+                  // reset result container if used before
+                  $('.search-result').empty();
+
+                  let randomId = Math.floor(Math.random() * paragrafContainer.length);
+                  paragrafContainer.forEach(p =>{
+                    if(p.innerHTML.toLowerCase().search(searchValue) >= 0 && !p.classList.contains('d-none')){
+                        let searchId = `searchid-${randomId}`
+                        p.setAttribute('id', searchId);
+
+                        let content = p.innerHTML
+                        if(content.length > 40){
+                          content = content.slice(0 , 40)
+                        }
+                        $('.search-result').append(`<p>${content}....</p><span><a class="btn btn-primary btn-see" onclick="closeModal(this)" href="#${searchId}">Lihat</a></span>`)
+                        $('.search-result').append('<hr>')
+                      }
+                  })
+
+                }
+              })
+
+            }, true)
+          })
+
+          
+          
+        })
+      </script>
+</body>
+
+</html>

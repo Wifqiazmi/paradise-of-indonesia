@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0dcaf0" />
+  <link rel="shortcut icon" href="./assets/img/logo-light.png" type="image/x-icon" />
+  <title>Paradise Of Indonesia</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css"
+    integrity="sha256-6YrKt7vMU9e4bwtlblASqhvvEt4/0JEQJ/zyWOFKnaM=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../assets/splide-4.0.7/dist/css/splide.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body class="bg-white">
+  <!-- preloader -->
+  <div class="preloader">
+    <div class="loading">
+      <img src="./assets/img/preloader.gif" width="80" />
+    </div>
+  </div>
+
+  <!-- navbar -->
+  <nav class="navbar shadow p-3 mb-5 bg-transparent navbar-expand-lg sticky-top rounded-bottom fw-bold">
+    <div class="container">
+      <a class="navbar-brand" href="../">
+        <img src="./assets/img/logo-dark.png" alt="logo" width="40" height="30"
+          class="d-inline-block logo-dark align-text-top" />
+        <img src="./assets/img/logo-light.png" alt="logo" width="40" height="30"
+          class="d-inline-block logo-light d-none align-text-top" />
+        <span class="fw-bold fs-6">Paradise Of Indonesia</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list-nested" style="font-size: 20px; color: cornflowerblue"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="../">Home</a>
+          </li>
+          <li class="nav-item mx-2 dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdown" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Budaya
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdown">
+              <li>
+                <a class="dropdown-item" href="./aksara-jawa/">Aksara Jawa</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./borobudur/">Borobudur</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./batik-jawa/">Batik Jawa</a>
+              </li>
+              <li><a class="dropdown-item" href="./gamelan/">Gamelan</a></li>
+              <li>
+                <a class="dropdown-item" href="./kethoprak/">Kethoprak</a>
+              </li>
+              <li><a class="dropdown-item" href="./keris/">Keris</a></li>
+              <li>
+                <a class="dropdown-item" href="./kuda-lumping/">Kuda Lumping</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link active" href="#galery">Galery</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link active" href="#about-us">About Us</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link active" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item ms-2">
+            <a class="nav-link active waves-effect waves-light" id="theme-changer">
+              <img src="./assets/img/night-mode.png" class="img-darkmode" alt="ligth mode" />
+            </a>
+          </li>
+          <li class="nav-item ms-2">
+            <span id="btn-search" class="btn"><i class="bi bi-search text-white bg-info rounded p-2"></i></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- end navbar -->
+
+  <!-- progres bar -->
+  <div class="progress-container fixed-top">
+    <span class="progress-bar"></span>
+  </div>
+
+  <!-- search modal -->
+  <div id="search-modal" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog text-dark modal-dialog-scrollable pt-5">
+      <div class="modal-content">
+        <div class="modal-header shadow">
+          <input class="form-control me-2" type="search" placeholder="Search" id="search-container"
+            aria-label="Search" />
+        </div>
+        <div class="modal-body">
+          <div class="search-result p-3"></div>
+        </div>
+        <div class="modal-footer p-2">
+          <span class="badge bg-secondary">ESC to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of search modal -->
+
+  <!-- home -->
+  <div class="container vh-100" id="home">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-6 position-absolute top-50 start-50 translate-middle text-center" data-aos="fade-up">
+        <h3 class="fw-semibold">JAWA TENGAH</h3>
+        <p>
+          Jawa Tengah adalah sebuah provinsi Indonesia yang terletak di bagian
+          tengah Pulau Jawa. Ibu kotanya adalah Semarang. Provinsi ini
+          berbatasan dengan Provinsi Jawa Barat di sebelah barat, Samudra
+          Hindia dan Daerah Istimewa Yogyakarta di sebelah selatan, Jawa Timur
+          di sebelah timur, dan Laut Jawa di sebelah
+        </p>
+        <a href="#galery" class="btn btn-lg btn-secondary fw-bold border-white bg-primary">Jelajah Sekarang!</a>
+      </div>
+    </div>
+  </div>
+  <!-- end home -->
+
+  <!-- budaya -->
+  <div class="container-fluid vh-100 py-5" id="galery" style="background-color: #475284">
+    <div class="row justify-content-center align-content-center">
+      <div class="col-lg-8 col-md-8 col-sm-8 mx-5">
+        <h1 class="my-4 text-white text-center fw-semibold py-5">Galery</h1>
+        <div class="row py-4 mx-5">
+          <div class="col" onclick="bukaModal()" style="cursor: pointer" data-aos="fade-up" data-aos-delay="400">
+            <img src="../assets/img/borobudur.jpg" alt="borobudur" class="img-fluid rounded"
+              style="height: 400px; object-fit: cover; width: 300px" />
+          </div>
+          <div class="col hide-mobile" onclick="bukaModal()" style="cursor: pointer" data-aos="fade-up"
+            data-aos-delay="450">
+            <img src="../assets/img/gamelan.jpg" alt="gamelan" class="img-fluid rounded"
+              style="height: 400px; object-fit: cover; width: 3 00px" />
+          </div>
+          <div class="col hide-mobile" onclick="bukaModal()" style="cursor: pointer" data-aos="fade-up"
+            data-aos-delay="500">
+            <img src="../assets/img/joglo.jpg" alt="borobudur" class="img-fluid rounded"
+              style="height: 400px; object-fit: cover; width: 3 00px" />
+          </div>
+          <div class="col hide-mobile" onclick="bukaModal()" style="cursor: pointer" data-aos="fade-up"
+            data-aos-delay="550">
+            <img src="../assets/img/ketoprak.jpg" alt="ketoprak" class="img-fluid rounded"
+              style="height: 400px; object-fit: cover; width: 300px" />
+          </div>
+        </div>
+        <span class="text-white ms-5" style="cursor: pointer" onclick="bukaModal()" data-aos="zoom-out"
+          data-aos-delay="400">
+          Lihat lainnya <i class="bi bi-arrow-right"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+  <!-- end budaya -->
+
+  <!-- Light Box -->
+  <!-- Modal -->
+  <div class="modalku bg-black bg-opacity-75" id="modals">
+    <span class="close cursor" onclick="tutupModal()">&times;</span>
+    <div class="modal-content">
+      <section id="main-carousel" class="splide" aria-label="Beautiful Images">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/hanacaraka.jpg" alt="" class="img-fluid rounded" />
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/batik.jpg" alt="" class="img-fluid rounded" />
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/joglo.jpg" alt="" class="img-fluid rounded" />
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/keris.jpg" alt="" class="img-fluid rounded" />
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/ketoprak.jpg" alt="" class="img-fluid rounded" />
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/gamelan.jpg" alt="" class="img-fluid rounded" />
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/kuda-lumping.jpg" alt="" class="img-fluid rounded" />
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/wayang.jpg" alt="" class="img-fluid rounded" />
+            </li>
+            <li class="splide__slide main__splide_image">
+              <img src="../assets/img/borobudur.jpg" alt="" class="img-fluid rounded" />
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="thumbnail-carousel" class="splide"
+        aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel.">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/hanacaraka.jpg" alt="" class="img-fluid" />
+            </li>
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/batik.jpg" alt="" class="img-fluid" />
+            </li>
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/joglo.jpg" alt="" class="img-fluid" />
+            </li>
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/keris.jpg" alt="" class="img-fluid" />
+            </li>
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/ketoprak.jpg" alt="" class="img-fluid" />
+            </li>
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/gamelan.jpg" alt="" class="img-fluid" />
+            </li>
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/kuda-lumping.jpg" alt="" class="img-fluid" />
+            </li>
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/wayang.jpg" alt="" class="img-fluid" />
+            </li>
+            <li class="splide__slide splide__thumbnail">
+              <img src="../assets/img/borobudur.jpg" alt="" class="img-fluid" />
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- end of light box -->
+
+  <!-- this button will visivle if documen scolled down -->
+  <button onclick="topFunction()" id="go-top" title="Go to top" class="bg-info">
+    <i class="bi bi-arrow-up-circle"></i>
+  </button>
+
+  <!-- container content list -->
+  <div class="container my-5 vh-auto">
+    <div class="text-center pt-5">
+      <h2 class="fw-bold" data-aos="fade-up" data-aos-dalay="200">KONTEN</h2>
+      <p class="pb-5 article text-center" data-aos="fade-up" data-aos-dalay="350">
+        Beberapa content unggulan kami
+      </p>
+    </div>
+    <div class="row align-content-center pt-4">
+      <div class="col-10 mx-auto">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 mb-2" data-aos="zoom-in-up" data-aos-dalay="500">
+            <a href="#budaya" class="text-decoration-none text-black">
+              <div class="card shadow-sm mb-2 card-content text-center">
+                <div class="row p-4">
+                  <div class="col">
+                    <img src="../assets/img/budaya.png" class="ms-4 me-0" width="150px" height="150px" alt=""
+                      srcset="" />
+                  </div>
+                  <div class="col">
+                    <h5 class="fw-bold text-start">BUDAYA</h5>
+                    <p class="text-start">Beberapa budaya yang kami angkat</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-6 mb-2">
+            <a href="#geografi" class="text-decoration-none text-black">
+              <div class="card shadow-sm mb-2 card-content text-center" data-aos="zoom-in-up" data-aos-dalay="600">
+                <div class="row p-4">
+                  <div class="col">
+                    <img src="../assets/img/geografi.png" class="ms-4 me-0" width="150px" height="150px" alt=""
+                      srcset="" />
+                  </div>
+                  <div class="col">
+                    <h5 class="fw-bold text-start">GEOGRAFI</h5>
+                    <p class="text-start">Kondisi geografis pada provinsi</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <a href="#sejarah" class="text-decoration-none text-black">
+              <div class="card shadow-sm mb-2 card-content text-center" data-aos="zoom-in-up" data-aos-dalay="700">
+                <div class="row p-4">
+                  <div class="col">
+                    <img src="../assets/img/sejarah.png" class="ms-4 me-0" width="150px" height="150px" alt=""
+                      srcset="" />
+                  </div>
+                  <div class="col">
+                    <h5 class="fw-bold text-start">SEJARAH</h5>
+                    <p class="text-start">
+                      Sejarah lahirnya atau terciptanya
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <a href="#landmark" class="text-decoration-none text-black">
+              <div class="card shadow-sm mb-2 card-content text-center" data-aos="zoom-in-up" data-aos-dalay="800">
+                <div class="row p-4">
+                  <div class="col">
+                    <img src="../assets/img/landmark.png" class="ms-4 me-0" width="150px" height="150px" alt=""
+                      srcset="" />
+                  </div>
+                  <div class="col">
+                    <h5 class="fw-bold text-start">LANDMARK</h5>
+                    <p class="text-start">
+                      Landmark atau markah pada provinsi
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-4 text-white main-content" style="background-color: #475284">
+    <!-- sejarah -->
+    <div class="container mt-4 mb-5 px-lg-5" id="sejarah">
+      <h2 class="fw-bold">SEJARAH</h2>
+      <div class="img-main text-center">
+        <img src="../assets/img/borobudur.jpg" alt="borobudur" class="img-fluid rounded" />
+      </div>
+
+      <div class="article-main mt-4">
+        <p class="article">
+          Jawa Tengah sebagai provinsi dibentuk sejak zaman Hindia Belanda.
+          Hingga tahun 1905, Jawa Tengah terdiri atas 5 wilayah (gewesten),
+          yakni Semarang, Pati, Kedu, Banyumas, dan Pekalongan. Surakarta
+          masih merupakan daerah swapraja kerajaan (vorstenland) yang berdiri
+          sendiri dan terdiri dari dua wilayah, Kasunanan Surakarta dan
+          Mangkunegaran, sebagaimana Yogyakarta. Masing-masing gewest terdiri
+          atas kabupaten-kabupaten. Waktu itu Pati Gewest juga meliputi
+          Regentschap Tuban dan Bojonegoro. Setelah diberlakukannya
+          Decentralisatie Besluit tahun 1905, gewesten diberi otonomi dan
+          dibentuk dewan daerah. Selain itu juga dibentuk gemeente (kotapraja)
+          yang otonom, yaitu Pekalongan, Tegal, Semarang, Salatiga, dan
+          Magelang. Sejak tahun 1930, provinsi ditetapkan sebagai daerah
+          otonom yang juga memiliki Dewan Provinsi (Provinciale Raad).
+          Provinsi terdiri atas beberapa karesidenan (residentie), yang
+          meliputi beberapa kabupaten (regentschap), dan dibagi lagi dalam
+          beberapa kawedanan (district). Provinsi Jawa Tengah terdiri atas 5
+          karesidenan, yaitu Pekalongan, Pati, Semarang, Banyumas, dan Kedu.
+          Menyusul kemerdekaan Indonesia, pada tahun 1945 Pemerintah membentuk
+          daerah swapraja Kasunanan dan Mangkunegaran; dan dijadikan
+          karesidenan. Pada tahun 1950 melalui undang-undang ditetapkan
+          pembentukan kabupaten dan kota madya di Jawa Tengah yang meliputi 29
+          kabupaten dan 6 kota madya. Penetapan undang-undang tersebut hingga
+          kini diperingati sebagai Hari Jadi Provinsi Jawa Tengah, yakni
+          tanggal 15 Agustus 1950.
+        </p>
+      </div>
+    </div>
+    <!-- end of sejarah -->
+
+    <!-- geografi -->
+    <div class="container mt-4 mb-5 px-lg-5" id="geografi">
+      <h2 class="fw-bold">GEOGRAFIS</h2>
+      <div class="img-main text-center">
+        <img src="../assets/img/peta prov. jateng.jpg" alt="borobudur" class="img-fluid rounded" />
+      </div>
+
+      <div class="article-main mt-4">
+        <p class="article">
+          Relief Menurut tingkat kemiringan lahan di Jawa Tengah, 38% lahan
+          memiliki kemiringan 0–2%, 31% lahan memiliki kemiringan 2–15%, 19%
+          lahan memiliki kemiringan 15–40%, dan sisanya 12% lahan memiliki
+          kemiringan lebih dari 40%. Kawasan pantai utara Jawa Tengah memiliki
+          dataran rendah yang sempit. Di kawasan Brebes selebar 40 km dari
+          pantai, dan di Semarang hanya selebar 4 km. Dataran ini bersambung
+          dengan depresi Semarang-Rembang di timur. Gunung Muria pada akhir
+          Zaman Es (sekitar 10.000 tahun SM) merupakan pulau terpisah dari
+          Jawa, yang akhirnya menyatu karena terjadi endapan aluvial dari
+          sungai-sungai yang mengalir. Kota Demak semasa Kesultanan Demak
+          (abad ke-16 Masehi) berada di tepi laut dan menjadi tempat
+          berlabuhnya kapal. Proses sedimentasi ini sampai sekarang masih
+          berlangsung di pantai Semarang. Di selatan kawasan tersebut terdapat
+          Pegunungan Kapur Utara dan Pegunungan Kendeng, yakni pegunungan
+          kapur yang membentang dari sebelah timur Semarang mulai dari ujung
+          barat daya Kota Pati kemudian ke timur hingga perbatasan Lamongan
+          dan Bojonegoro (Jawa Timur). Rangkaian utama pegunungan di Jawa
+          Tengah adalah Pegunungan Serayu Utara dan Serayu Selatan. Rangkaian
+          Pegunungan Serayu Utara membentuk rantai pegunungan yang
+          menghubungkan rangkaian Bogor di Jawa Barat dengan Pegunungan
+          Kendeng di timur. Lebar rangkaian pegunungan ini sekitar 30–50 km;
+          di ujung baratnya terdapat Gunung Slamet dan bagian timur merupakan
+          Dataran Tinggi Dieng dengan puncak-puncaknya Gunung Parahu dan
+          Gunung Ungaran. Antara rangkaian Pegunungan Serayu Utara dan
+          Pegunungan Serayu Selatan dipisahkan oleh Depresi Serayu yang
+          membentang dari Majenang (Kabupaten Cilacap), Purwokerto, hingga
+          Wonosobo. Sebelah timur depresi ini terdapat gunung berapi Sindoro
+          dan Sumbing, dan sebelah timurnya lagi (kawasan Magelang dan
+          Temanggung ) merupakan lanjutan depresi yang membatasi Gunung Merapi
+          dan Gunung Merbabu. Pegunungan Serayu Selatan merupakan bagian dari
+          Cekungan Jawa Tengah Selatan yang terletak di bagian selatan
+          provinsi Jawa Tengah. Mandala ini merupakan geoantiklin yang
+          membentang dari barat ke timur sepanjang 100 kilometer dan terbagi
+          menjadi dua bagian yang dipisahkan oleh lembah Jatilawang yaitu
+          bagian barat dan timur. Bagian barat dibentuk oleh Gunung Kabanaran
+          (360 m) dan bisa dideskripsikan mempunyai elevasi yang sama dengan
+          Zona Depresi Bandung di Jawa Barat ataupun sebagai elemen struktural
+          baru di Jawa Tengah. Bagian ini dipisahkan dari Zona Bogor oleh
+          Depresi Majenang. Bagian timur dibangun oleh antiklin Ajibarang
+          (narrow anticline) yang dipotong oleh aliran Sungai Serayu. Pada
+          timur Banyumas, antiklin tersebut berkembang menjadi antiklinorium
+          dengan lebar mencapai 30 km pada daerah Lukulo (selatan
+          Banjarnegara-Midangan 1043 m) atau sering disebut tinggian Kebumen
+          (Kebumen High). Pada bagian paling ujung timur Mandala Pegunungan
+          Serayu Selatan dibentuk oleh kubah Pegunungan Kulonprogo (1022 m),
+          yang terletak di antara Purworejo dan Sungai Progo.
+        </p>
+      </div>
+    </div>
+    <!-- end of geografi -->
+
+    <!-- landmark -->
+    <div class="container mt-4 mb-5 px-lg-5" id="landmark">
+      <h2 class="fw-bold">LANDMARK</h2>
+      <div class="img-main text-center">
+        <img src="../assets/img/borobudur.jpg" alt="borobudur" class="img-fluid rounded" />
+      </div>
+
+      <div class="article-main mt-4">
+        <p class="article">
+          sejarah awal dibangunnya Candi Borobudur terjadi pada abad ke-8 dan
+          9 sekitar tahun 800 masehi pada masa pemerintahan dinasti
+          Syailendra. Pembangunan Borobudur diprediksi membutuhkan waktu
+          puluhan hingga ratusan tahun sampai benar-benar rampung pada masa
+          pemerintahan raja Samaratungga tahun 825. Meski selesai dibangun,
+          tidak ada catatan sejarah yang menjelaskan siapa sosok yang
+          membangun candi Borobudur. Pasalnya, pada masa itu agama Hindu dan
+          Buddha berkembang bersamaan di pulau Jawa. Dinasti Syailendra
+          tercatat sebagai penganut agama Buddha aliran Mahayana sementara di
+          sekitar Borobudur juga terdapat penganut Hindu aliran Siwa. Sejumlah
+          arkeolog menduga pembangunan Candi Borobudur mengalami perombakan
+          sebanyak empat kali. Awalnya pembangunan dimulai dengan meratakan
+          dataran sekitar candi dan memadatkan tanah dengan batu untuk
+          membentuk struktur piramida. Sejarah Candi Borobudur erat kaitannya
+          dengan sejarah Buddha di Indonesia Struktur tersebut kemudian
+          berubah lantaran ditambahnya luas undakan persegi dan melingkar.
+          Kemudian, Borobudur mengalami perubahan terakhir pada undakan
+          melingkar dan dilakukan pelebaran ukuran pondasi. Kemegahan
+          Borobudur sempat sirna selama berabad-abad karena terkubur di bawah
+          lapisan tanah dan debu vulkanik yang kemudian ditumbuhi pohon dan
+          semak belukar hingga menyerupai bukit. Tidak diketahui alasan pasti
+          Borobudur ditinggalkan penduduknya saat itu. Teori sejarah mengarah
+          pada erupsi Gunung Merapi dan beralihnya keyakinan penduduk dari
+          Budha ke Islam. Kembalinya kemasyhuran Candi Borobudur terjadi pada
+          masa Thomas Stamford Raffles saat menjabat sebagai Gubernur Jenderal
+          di pulau Jawa pada 1811. Penemuan kembali terjadi saat Raffles
+          mendengar terdapat sebuah bangunan besar tersembunyi jauh di dalam
+          hutan dekat desa Bumisegoro. Raffles kemudian mengutus seorang
+          Insinyur Belanda bernama Christian Cornelius untuk memeriksanya.
+          Tersiarnya kabar penemuan kembali Borobudur juga menjadi malapetaka
+          terjadinya kerusakan di banyak tempat. Sampai pada akhir 1960-an
+          pemerintah Indonesia meminta bantuan kepada UNESCO untuk mengatasi
+          permasalahan di Candi Borobudur. Dalam sejarah Candi Borobudur,
+          renovasinya menghabiskan waktu yang lama dan biaya yang besar sampai
+          penetapan sebagai Situs Warisan Dunia oleh UNESCO pada 1991.
+        </p>
+      </div>
+    </div>
+    <!-- end of landmark -->
+  </div>
+
+  <!-- list budaya -->
+  <div class="container my-5">
+    <h2 class="fw-bold mb-4 px-5" id="budaya">Budaya Jawa Tengah</h2>
+    <hr />
+    <div class="container my-5 vh-100 overflow-auto" id="list-budaya-dekstop">
+      <div class="row m-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">BOROBUDUR</h3>
+          <p class="article pt-4 text-justify">
+            sejarah awal dibangunnya Candi Borobudur terjadi pada abad ke-8
+            dan 9 sekitar tahun 800 masehi pada masa pemerintahan dinasti
+            Syailendra. Pembangunan Borobudur diprediksi membutuhkan waktu
+            puluhan hingga ratusan tahun sampai benar-benar rampung pada..
+          </p>
+          <a href="./borobudur/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="./assets/img/borobudur.jpg" alt="" class="img-fluid rounded" style="width: 50%; height: 50%" />
+          </div>
+        </div>
+      </div>
+      <div class="row m-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">AKSARA JAWA</h3>
+          <p class="article pt-4 text-justify">
+            Legenda mengatakan bahwa aksara Hanacaraka diciptakan oleh Aji
+            Saka, penguasa Kerajaan Medang Kamulan, yang mempunyai dua abdi
+            setia bernama Dora dan Sembada. Suatu ketika, Aji Saka mengutus
+            Dora untuk menemui Sembada dan membawakan pusakanya. Dara kemudian
+            mendatangi Sembada dan menyampaikan tentang perintah...
+          </p>
+          <a href="./aksara-jawa/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/hanacaraka.jpg" alt="" class="img-fluid rounded" style="width: 50%; height: 50%" />
+          </div>
+        </div>
+      </div>
+      <div class="row m-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">BATIK JAWA</h3>
+          <p class="article pt-4 text-justify">
+            Sejarah Batik Indonesia terkait erat dengan perkembangan Kerajaan
+            Majapahit dan penyebaran ajaran Islam di Pulau Jawa. Dalam
+            beberapa catatan, pengembangan batik banyak dilakukan pada zaman
+            Kesultanan Mataram, lalu berlanjut pada zaman...
+          </p>
+          <a href="./batik-jawa/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/batik.jpg" alt="" class="img-fluid rounded" style="width: 50%; height: 50%" />
+          </div>
+        </div>
+      </div>
+      <div class="row m-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">GAMELAN</h3>
+          <p class="article pt-4 text-justify">
+            Gamelan berasal dari kata “gamel” yang dalam bahasa Jawa artinya
+            memukul atau menabuh, sedangkan akhiran “an” merujuk pada kata
+            benda. Secara keseluruhan bisa dimaknai sebagai seperangkat alat
+            musik yang dimainkan dengan cara dipukul atau ditabuh...
+          </p>
+          <a href="./gamelan/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/gamelan.jpg" alt="" class="img-fluid rounded" style="width: 50%; height: 50%" />
+          </div>
+        </div>
+      </div>
+      <div class="row m-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">KERIS</h3>
+          <p class="article pt-4 text-justify">
+            Keris merupakan senjata tikam golongan belati yg berasal dari Jawa
+            yang memiliki ragam fungsi budaya yang dikenal di kawasan
+            Nusantara bagian barat dan tengah. Bentuknya khas dan mudah
+            dibedakan dari senjata tajam lainnya karena tidak simetris di
+            bagian...
+          </p>
+          <a href="./keris/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/keris.jpg" alt="" class="img-fluid rounded" style="width: 50%; height: 50%" />
+          </div>
+        </div>
+      </div>
+      <div class="row m-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">KETHOPRAK</h3>
+          <p class="article pt-4 text-justify">
+            Ketoprak (bahasa Jawa: kethoprak) adalah sejenis seni pentas drama
+            tradisional yang diyakini berasal dari Surakarta dan berkembang
+            pesat di Yogyakarta, oleh karena itu kesenian ini sering disebut
+            sebagai Ketoprak Mataram...
+          </p>
+          <a href="./kethoprak/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img//ketoprak.jpg" alt="" class="img-fluid rounded" style="width: 50%; height: 50%" />
+          </div>
+        </div>
+      </div>
+      <div class="row m-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">KUDA LUMPING</h3>
+          <p class="article pt-4 text-justify">
+            Kuda lumping juga disebut Jaran kepang atau Jathilan adalah tarian
+            tradisional Jawa yang menampilkan sekelompok prajurit tengah
+            menunggang kuda. Tarian ini berasal dari Ponorogo. Tarian ini
+            menggunakan kuda yang terbuat dari bambu atau bahan lainnya...
+          </p>
+          <a href="./kuda-lumping/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/kuda-lumping.jpg" alt="" class="img-fluid rounded"
+              style="width: 50%; height: 50%" />
+          </div>
+        </div>
+      </div>
+      <div class="row m-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">RUMAH JOGLO</h3>
+          <p class="article pt-4 text-justify">
+            Pada zaman dahulu, rumah Joglo merupakan simbol dari status sosial
+            yang hanya dapat dimiliki oleh orang yang mampu secara finansial.
+            Bahan-bahannya pun memang lebih mahal ketimbang jenis rumah adat
+            Jawa Tengah yang lain. Selain membutuhkan biaya yang tidak...
+          </p>
+          <a href="./rumah-joglo/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/joglo.jpg" alt="" class="img-fluid rounded" style="width: 50%; height: 50%" />
+          </div>
+        </div>
+      </div>
+      <div class="row m-5">
+        <div class="col col-lg-6">
+          <h3 class="fw-bold">WAYANG KULIT</h3>
+          <p class="article pt-4 text-justify">
+            seni tradisional Indonesia yang terutama berkembang di Jawa Tengah
+            dan Jawa Timur. Wayang berasal dari kata "Ma Hyang" yang artinya
+            menuju kepada roh spiritual, dewa, atau Tuhan Yang Maha Esa. Ada
+            juga yang mengartikan wayang adalah istilah...
+          </p>
+          <a href="./wayang-kulit/" class="btn btn-primary">Lihat selengkapnya</a>
+        </div>
+        <div class="col col-lg-6">
+          <div class="text-end">
+            <img src="../assets/img/wayang.jpg" alt="" class="img-fluid rounded" style="width: 50%; height: 50%" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="my-5 vh-100 overflow-auto d-none" id="list-budaya-mobile">
+      <div class="row d-flex flex-column justify-content-center">
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="./assets/img/borobudur.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h3 class="fw-bold">BOROBUDUR</h3>
+              <p class="article pt-4 text-justify">
+                sejarah awal dibangunnya Candi Borobudur terjadi pada abad
+                ke-8 dan 9 sekitar tahun 800 masehi pada masa pemerintahan
+                dinasti Syailendra. Pembangunan Borobudur diprediksi
+                membutuhkan waktu puluhan hingga ratusan tahun sampai
+                benar-benar rampung pada..
+              </p>
+              <a href="./borobudur/" class="btn btn-primary">Lihat selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/hanacaraka.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h3 class="fw-bold">AKSARA JAWA</h3>
+              <p class="article pt-4 text-justify">
+                Legenda mengatakan bahwa aksara Hanacaraka diciptakan oleh Aji
+                Saka, penguasa Kerajaan Medang Kamulan, yang mempunyai dua
+                abdi setia bernama Dora dan Sembada. Suatu ketika, Aji Saka
+                mengutus Dora untuk menemui Sembada dan membawakan pusakanya.
+                Dara kemudian mendatangi Sembada dan menyampaikan tentang
+                perintah...
+              </p>
+              <a href="./aksara-jawa/" class="btn btn-primary">Lihat selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/batik.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h3 class="fw-bold">BATIK JAWA</h3>
+              <p class="article pt-4 text-justify">
+                Sejarah Batik Indonesia terkait erat dengan perkembangan
+                Kerajaan Majapahit dan penyebaran ajaran Islam di Pulau Jawa.
+                Dalam beberapa catatan, pengembangan batik banyak dilakukan
+                pada zaman Kesultanan Mataram, lalu berlanjut pada zaman...
+              </p>
+              <a href="./batik-jawa/" class="btn btn-primary">Lihat selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/gamelan.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h3 class="fw-bold">GAMELAN</h3>
+              <p class="article pt-4 text-justify">
+                Gamelan berasal dari kata “gamel” yang dalam bahasa Jawa
+                artinya memukul atau menabuh, sedangkan akhiran “an” merujuk
+                pada kata benda. Secara keseluruhan bisa dimaknai sebagai
+                seperangkat alat musik yang dimainkan dengan cara dipukul atau
+                ditabuh...
+              </p>
+              <a href="./gamelan/" class="btn btn-primary">Lihat selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/keris.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h3 class="fw-bold">KERIS</h3>
+              <p class="article pt-4 text-justify">
+                Keris merupakan senjata tikam golongan belati yg berasal dari
+                Jawa yang memiliki ragam fungsi budaya yang dikenal di kawasan
+                Nusantara bagian barat dan tengah. Bentuknya khas dan mudah
+                dibedakan dari senjata tajam lainnya karena tidak simetris di
+                bagian...
+              </p>
+              <a href="./keris/" class="btn btn-primary">Lihat selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/ketoprak.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h3 class="fw-bold">KETHOPRAK</h3>
+              <p class="article pt-4 text-justify">
+                Ketoprak (bahasa Jawa: kethoprak) adalah sejenis seni pentas
+                drama tradisional yang diyakini berasal dari Surakarta dan
+                berkembang pesat di Yogyakarta, oleh karena itu kesenian ini
+                sering disebut sebagai Ketoprak Mataram...
+              </p>
+              <a href="./kethoprak/" class="btn btn-primary">Lihat selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/kuda-lumping.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h3 class="fw-bold">KUDA LUMPING</h3>
+              <p class="article pt-4 text-justify">
+                Kuda lumping juga disebut Jaran kepang atau Jathilan adalah
+                tarian tradisional Jawa yang menampilkan sekelompok prajurit
+                tengah menunggang kuda. Tarian ini berasal dari Ponorogo.
+                Tarian ini menggunakan kuda yang terbuat dari bambu atau bahan
+                lainnya...
+              </p>
+              <a href="./kuda-lumping/" class="btn btn-primary">Lihat selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="../assets/img/joglo.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h3 class="fw-bold">RUMAH JOGLO</h3>
+              <p class="article pt-4 text-justify">
+                Pada zaman dahulu, rumah Joglo merupakan simbol dari status
+                sosial yang hanya dapat dimiliki oleh orang yang mampu secara
+                finansial. Bahan-bahannya pun memang lebih mahal ketimbang
+                jenis rumah adat Jawa Tengah yang lain. Selain membutuhkan
+                biaya yang tidak...
+              </p>
+              <a href="./rumah-joglo/" class="btn btn-primary">Lihat selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 px-5 mb-4">
+          <div class="card">
+            <img src="./assets/img/borobudur.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h3 class="fw-bold">WAYANG KULIT</h3>
+              <p class="article pt-4 text-justify">
+                seni tradisional Indonesia yang terutama berkembang di Jawa
+                Tengah dan Jawa Timur. Wayang berasal dari kata "Ma Hyang"
+                yang artinya menuju kepada roh spiritual, dewa, atau Tuhan
+                Yang Maha Esa. Ada juga yang mengartikan wayang adalah
+                istilah...
+              </p>
+              <a href="./wayang-kulit/" class="btn btn-primary">Lihat selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of list budaya -->
+
+  <!-- about us -->
+  <div class="container" id="about-us">
+    <div class="row justify-content-center my-5 pt-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 mb-5">
+          <div class="card card-content">
+            <div class="card-body">
+              <p>Apakah artikel ini membantu?</p>
+              <div class="reaction mb-2">
+                <a onclick="handleEmoji(this)"> 😒 </a>
+                <a onclick="handleEmoji(this)"> 😑 </a>
+                <a onclick="handleEmoji(this)"> 🙂 </a>
+                <a onclick="handleEmoji(this)"> 😀 </a>
+              </div>
+              <div class="text-center" id="container-feedback">
+                <form class="">
+                  <div class="mb-3">
+                    <div class="form-floating">
+                      <input type="text" class="form-control form" id="name" aria-describedby="nameHelp" />
+                      <label for="name">Full Name</label>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="form-floating">
+                      <textarea class="form-control form" placeholder="Leave a feedback here" id="feedback-placeholder"
+                        style="height: 100px"></textarea>
+                      <label for="feedback-placeholder">Comments</label>
+                    </div>
+                  </div>
+                  <a onclick="handleFeedback()" class="btn btn-primary shadow-lg" id="send-feedback">Submit</a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-5">
+          <div class="card mb-2 card-content">
+            <div class="card-body">
+              <h5>Contact Us</h5>
+              <p>Hubungi kami sekarang!</p>
+              <div id="container-feedback">
+                <form class="">
+                  <div class="mb-3">
+                    <div class="form">
+                      <label for="name">Full Name</label>
+                      <input type="text" class="form-control form" id="name" aria-describedby="nameHelp" />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="form">
+                      <label for="email">Email Address</label>
+                      <input type="email" class="form-control form" id="email" aria-describedby="email" />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="form-floating">
+                      <textarea class="form-control form" placeholder="Leave a feedback here" id="feedback-placeholder"
+                        style="height: 100px"></textarea>
+                      <label for="feedback-placeholder">Comments</label>
+                    </div>
+                  </div>
+                  <a onclick="handleFeedback()" class="btn btn-primary shadow-lg" id="send-feedback">Submit</a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="mt-auto text-white fw-bold" style="background-color: #475284">
+    <div class="p-5 container">
+      <div class="row justify-content-center">
+        <div class="col-lg-4 mb-4">
+          <img src="./assets/img/logo-light.png" alt="logo Paradise Of Indonesia" width="100px" />
+          <p>@ 2024 Paradise Of Indonesia, All rights reserved.</p>
+        </div>
+        <div class="col-lg-4 mb-4"></div>
+        <div class="col-lg-4 mb-4 mx-auto">
+          <h5>Navigasi</h5>
+          <p><a href="./" class="text-decoration-none">Home</a></p>
+          <p><a href="#" class="text-decoration-none">Provinsi</a></p>
+          <p>
+            <a href="../../index.html#tentangkami" class="text-decoration-none">About us</a>
+          </p>
+          <p><a href="#" class="text-decoration-none">Contact</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-dark p-2 text-white d-flex justify-content-around">
+      <p class="fw-lighter">
+        Build with ❤️ using
+        <a href="https://getbootstrap.com/" class="text-white"> Bootstrap </a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../assets/splide-4.0.7/dist/js/splide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/script.js"></script>
+  <script>
+    AOS.init();
+    document.addEventListener("DOMContentLoaded", () => {
+      try {
+        let main = new Splide("#main-carousel", {
+          type: "fade",
+          rewind: true,
+          pagination: false,
+          arrows: true,
+        });
+
+        let thumbnails = new Splide("#thumbnail-carousel", {
+          fixedWidth: 100,
+          fixedHeight: 60,
+          gap: 10,
+          rewind: true,
+          pagination: false,
+          isNavigation: true,
+          breakpoints: {
+            600: {
+              fixedWidth: 60,
+              fixedHeight: 44,
+            },
+          },
+        });
+
+        main.sync(thumbnails);
+        main.mount();
+        thumbnails.mount();
+      } catch (error) {
+        console.log(error.message);
+      }
+
+      const btnSearch = document.getElementById("btn-search");
+
+      // search modal
+      btnSearch.addEventListener("click", () => {
+        $(".navbar-toggler").click();
+        $("#search-modal").modal("show");
+        $(".search-result").empty();
+        document.querySelector("#search-container").value = "";
+      });
+
+      $("#search-modal").on("click", () => {
+        document.querySelector("#search-container").addEventListener(
+          "input",
+          (e) => {
+            let searchValue = e.target.value.toLowerCase();
+            let paragrafContainer = document.querySelectorAll("p");
+
+            document
+              .querySelector("input")
+              .addEventListener("keypress", (e) => {
+                if (e.key == "Enter") {
+                  // reset result container if used before
+                  $(".search-result").empty();
+
+                  let randomId = Math.floor(
+                    Math.random() * paragrafContainer.length
+                  );
+                  paragrafContainer.forEach((p) => {
+                    if (
+                      p.innerHTML.toLowerCase().search(searchValue) >= 0 &&
+                      !p.classList.contains("d-none")
+                    ) {
+                      let searchId = `searchid-${randomId}`;
+                      p.setAttribute("id", searchId);
+
+                      let content = p.innerHTML;
+                      if (content.length > 40) {
+                        content = content.slice(0, 40);
+                      }
+                      $(".search-result").append(
+                        `<p>${content}....</p><span><a class="btn btn-primary btn-see" onclick="closeModal(this)" href="#${searchId}">Lihat</a></span>`
+                      );
+                      $(".search-result").append("<hr>");
+                    }
+                  });
+                }
+              });
+          },
+          true
+        );
+      });
+    });
+  </script>
+</body>
+
+</html>
