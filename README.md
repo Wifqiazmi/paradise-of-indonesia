@@ -37,12 +37,16 @@ Capstone Project SIB Cycle 6 - Dicoding 2024
 
 ## Executive Summary
 
-Pariwisata adalah salah satu sektor yang sangat penting bagi perekonomian Indonesia. Dengan kekayaan alam dan budaya yang luar biasa, Indonesia memiliki potensi besar untuk menjadi destinasi wisata unggulan di dunia. Namun, dalam beberapa tahun terakhir, industri pariwisata Indonesia menghadapi berbagai tantangan, terutama dalam mempromosikan destinasi wisata di era digital. 
+Latar Belakang proyek kami mencakup analisis tentang potensi pariwisata Indonesia, tantangan yang dihadapi dalam mempromosikan budaya indonesia di dunia digital, dan penggunaan teknologi untuk meningkatkan media budaya yang menceritakan tentang beberapa budaya yang ada di Indonesia. Tim kami memilih proyek ini karena kami percaya bahwa Indonesia memiliki potensi yang luar biasa untuk menarik wisatawan global, namun potensi tersebut belum sepenuhnya dimanfaatkan secara efektif.
 
 
 ## Project Scope & Deliverables:
 
-Tujuan utama proyek "Paradise of Indonesia" adalah meningkatkan eksposur global terhadap keindahan alam dan budaya Indonesia melalui penggunaan teknologi digital. Dengan membangun situs web yang menarik dan informatif, kami berharap dapat menarik perhatian wisatawan dari berbagai negara dan menginspirasi mereka untuk menjelajahi keindahan Indonesia.
+Tujuan utama proyek "Paradise of Indonesia" adalah meningkatkan eksposur global terhadap  budaya Indonesia melalui penggunaan teknologi digital. Dengan membangun situs web yang menarik dan informatif, kami berharap dapat menarik perhatian wisatawan dari berbagai negara dan menginspirasi mereka untuk menjelajahi keindahan Indonesia.
+
+## 🚧 Status Proyek
+
+Proyek ini sedang dalam tahap pengembanan. Kami berupaya terus memperbarui dan meningkatkan fitur-fitur yang ada.
 
 ## Presented By :
 
