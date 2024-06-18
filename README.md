@@ -2,7 +2,6 @@
 
   <a href="https://paradise-of-indonesia.vercel.app/"><img src="./assets/img/logo-light.png" alt="icon" border="0"></a>
 
-
   
 # PARADISE OF INDONESIA
 Capstone Project SIB Cycle 6 - Dicoding 2024
